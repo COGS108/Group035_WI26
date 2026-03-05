@@ -192,3 +192,5 @@ data/*/*.SQ*
 #prevents txt in data
 data/*/*.txt
 data/*/
+
+.vscode/
