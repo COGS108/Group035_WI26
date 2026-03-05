@@ -188,3 +188,9 @@ data/*.sq*
 data/*/*.sq*
 data/*.SQ*
 data/*/*.SQ*
+
+#prevents txt in data
+data/*/*.txt
+data/*/
+
+.vscode/

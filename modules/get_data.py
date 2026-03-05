@@ -22,6 +22,15 @@ def get_raw(file_list, destination_directory):
         filename = file_info['filename']
         local_filepath = os.path.join(destination_directory, filename)
 
+        #skip if already installed
+        if os.path.exists(local_filepath):
+            # If file is > 10KB, real data
+            if os.path.getsize(local_filepath) > 10000:
+                print(f"Skipping {filename} - already exists.")
+                continue
+            else:
+                os.remove(local_filepath)
+
         try:
             response = requests.get(url, stream=True)
             response.raise_for_status()  # Raise an exception for bad status codes
